@@ -30,7 +30,7 @@ import CreateTeamModal from "@/components/CreateTeamModal";
 
 
 
-const page = () => {
+const page: React.FC = () => {
 
   const [teams2, setTeams] = useState<Team[]>(teams);
   const [isModalOpen, setIsModalOpen] = useState(false);

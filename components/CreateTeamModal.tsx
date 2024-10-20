@@ -97,6 +97,7 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
               value={newTeam.image}
               onChange={handleChange}
               className="input input-bordered w-full"
+              placeholder="https://cdn.worldvectorlogo.com/logos/it-2.svg"
             />
           </div>
           <div className="modal-action">

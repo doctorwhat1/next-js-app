@@ -29,18 +29,39 @@ import { Team } from "@/models/Team";
 import CreateTeamModal from "@/components/CreateTeamModal";
 
 
-
-const page: React.FC = () => {
-
-  const [teams2, setTeams] = useState<Team[]>(teams);
+function useTeamsManager(initialData: Team[]) {
+  const [teams2, setTeams] = useState<Team[]>(initialData);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
   const handleSaveTeam = (newTeam: Team) => {
-    setTeams([...teams2, newTeam]);
+    setTeams((prevTeams) => [...prevTeams, newTeam]);
   };
+
+  return {
+    teams2,
+    isModalOpen,
+    handleOpenModal,
+    handleCloseModal,
+    handleSaveTeam,
+  };
+}
+
+
+
+const page: React.FC = () => {
+
+    const {
+      teams2,
+      isModalOpen,
+      handleOpenModal,
+      handleCloseModal,
+      handleSaveTeam,
+    } = useTeamsManager(teams);
+
+
 
   return (
 <div>

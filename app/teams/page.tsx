@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from 'next/link'
 import Sidebar from "@/components/Sidebar";
@@ -21,15 +22,26 @@ import {
 import Dropdown from "@/components/dropdown";
 
 import TeamsTable from "@/components/TeamsTable";
+
 import { teams } from "../data/teams";
+import { useState } from "react";
+import { Team } from "@/models/Team";
+import CreateTeamModal from "@/components/CreateTeamModal";
+
 
 
 const page = () => {
 
-  
+  const [teams2, setTeams] = useState<Team[]>(teams);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
 
-  
+  const handleSaveTeam = (newTeam: Team) => {
+    setTeams([...teams2, newTeam]);
+  };
+
   return (
 <div>
 
@@ -50,11 +62,21 @@ const page = () => {
   <CardContent>
 
 
+  <button className="btn btn-primary mb-4" onClick={handleOpenModal}>
+        Create Team
+      </button>
+      <CreateTeamModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onSave={handleSaveTeam}
+      />
+
+
 
 
     
   <div className="overflow-x-auto">
-  <TeamsTable data={teams} />
+  <TeamsTable data={teams2} />
 </div>
 
   </CardContent>

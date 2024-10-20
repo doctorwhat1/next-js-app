@@ -51,7 +51,7 @@ function useTeamsManager(initialData: Team[]) {
 
 
 
-const page: React.FC = () => {
+const Page: React.FC = () => {
 
     const {
       teams2,
@@ -116,4 +116,4 @@ const page: React.FC = () => {
   )
 }
 
-export default page
+export default Page

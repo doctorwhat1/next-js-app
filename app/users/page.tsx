@@ -37,7 +37,9 @@ const page = () => {
 <div>
 
 
-<Topbar />
+<div className="relative z-50">
+    <Topbar />
+</div>
 
 
 <div className="p-20 m-2">
@@ -47,7 +49,8 @@ const page = () => {
   <CardHeader>
     <CardTitle>Пользователи</CardTitle>
     <CardDescription>
-      Ваши пользователи? Глобальные пользователи? А фиг его знает.
+      На данном экране отображены все пользователи в базе данных. В финальном варианте сайта, этот экран не будет доступен для обычного пользователя.
+      Возможно, он в принципе будет удалён. В данный момент, здесь только заглушки.
     </CardDescription>
   </CardHeader>
   <CardContent>

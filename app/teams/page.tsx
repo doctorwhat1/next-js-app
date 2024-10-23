@@ -1,8 +1,4 @@
 'use client'
-import Image from "next/image";
-import Link from 'next/link'
-import Sidebar from "@/components/Sidebar";
-import Sidebar2 from "@/components/Sidebar2";
 import Topbar from "@/components/Topbar";
 import {
   Card,
@@ -12,14 +8,6 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/card';
-import {
-  TableHead,
-  TableRow,
-  TableHeader,
-  TableBody,
-  Table
-} from '@/components/table';
-import Dropdown from "@/components/dropdown";
 
 import TeamsTable from "@/components/TeamsTable";
 
@@ -66,8 +54,9 @@ const Page: React.FC = () => {
   return (
 <div>
 
-
-<Topbar />
+<div className="relative z-50">
+    <Topbar />
+</div>
 
 
 <div className="p-20 m-2">

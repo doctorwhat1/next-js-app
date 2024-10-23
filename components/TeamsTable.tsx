@@ -16,7 +16,7 @@ const TeamsTable: React.FC<TeamsTableProps> = ({ data }) => {
     };
   
     return (
-      <table className="table2">
+      <table className="table">
         <thead>
           <tr>
             <th></th>

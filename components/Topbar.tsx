@@ -24,10 +24,10 @@ const Topbar = () => {
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
         <li>
-          <a className="justify-between">
-            Profile
-            <span className="badge">New</span>
-          </a>
+          <div className="justify-between">
+          <Link href="/profile"> Profile
+            <span className="badge">New</span> </Link>
+          </div>
         </li>
         <li><a>Settings</a></li>
         <li><a>Logout</a></li>

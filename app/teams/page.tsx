@@ -97,8 +97,8 @@ const Page: React.FC = () => {
 
     
   <div className="overflow-x-auto">
-  <TeamsTable data={teams2} />
-</div>
+    <TeamsTable data={teams2} />
+  </div>
 
   </CardContent>
 </Card>

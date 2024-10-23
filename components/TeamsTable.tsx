@@ -16,7 +16,7 @@ const TeamsTable: React.FC<TeamsTableProps> = ({ data }) => {
     };
   
     return (
-      <table className="table">
+      <table className="table2">
         <thead>
           <tr>
             <th></th>
@@ -43,7 +43,7 @@ const TeamsTable: React.FC<TeamsTableProps> = ({ data }) => {
                   </div>
                   <div>
                     <div className="font-bold">{team.name}</div>
-                    <div className="text-sm opacity-50">{team.description}</div>
+                    <div className="text-sm text-gray-500">{team.description}</div>
                   </div>
                 </div>
               </td>

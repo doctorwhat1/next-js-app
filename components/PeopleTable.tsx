@@ -7,6 +7,7 @@ interface PeopleTableProps {
   data: Person[];
 }
 
+
 const PeopleTable: React.FC<PeopleTableProps> = ({ data }) => {
   const router = useRouter();
 

@@ -54,6 +54,9 @@ const page = () => {
 
     
   <div className="overflow-x-auto">
+
+
+
   <PeopleTable data={people} />
 
 

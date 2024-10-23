@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Sidebar = () => {
   return (
-    <div className="drawer">
+    <div className="drawer ">
   <input id="my-drawer" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content">
     {/* Page content here */}
@@ -19,6 +19,7 @@ const Sidebar = () => {
       <li><Link href="/teams">Мои Команды</Link></li>
       <li><Link href="/users">Пользователи</Link></li>
       <li><Link href="/tasks">Мои таски?</Link></li>
+      <li><Link href="/login">Логин</Link></li>
     </ul>
   </div>
 </div>

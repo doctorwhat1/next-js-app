@@ -1,3 +1,4 @@
+"use client"
 import Topbar from "@/components/Topbar";
 import RadialChart from "@/components/RadialChart";
 
@@ -9,6 +10,8 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/card';
+import { DarkThemeToggle } from "flowbite-react";
+import DarkModeButton from "@/components/DarkModeButton";
 
 
 export default function Home() {
@@ -36,7 +39,7 @@ export default function Home() {
       <div>
         Аналитика выполненных задач в команде 1 / всех ваших задач.
       </div>
-      <RadialChart />
+      
     </div>
 
     
@@ -46,8 +49,8 @@ export default function Home() {
 
 
 
-    <h1><br></br>Text!</h1>
-    <h3>Moooore text!!!</h3>
+    {/* <h1><br></br>Text!</h1>
+    <h3>Moooore text!!!</h3> */}
 
   
     </div>

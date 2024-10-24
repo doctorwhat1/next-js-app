@@ -13,7 +13,7 @@ export const teams: Team[] = [
 {
     id: 2,
     name: 'Стажёры Т1',
-    description: 'Всё плохо',
+    description: 'Работаем',
     category: 'Учебная группа',
     status: 'Активная',
     role: 'Пользователь',
@@ -21,7 +21,7 @@ export const teams: Team[] = [
 },
 {
     id: 3,
-    name: 'Разрабы 1С',
+    name: 'Офис 1С',
     description: 'Hardly Working.',
     category: 'Рабочий чат',
     status: 'Активная',
@@ -31,7 +31,7 @@ export const teams: Team[] = [
 {
     id: 4,
     name: 'Стажёры 2015г.',
-    description: 'Помогите',
+    description: 'Отработали',
     category: 'Рабочий чат',
     status: 'В архиве',
     role: 'Администратор',

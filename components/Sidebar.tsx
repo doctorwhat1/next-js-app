@@ -18,7 +18,7 @@ const Sidebar = () => {
       <li><Link href="/"     >Главная</Link></li>
       <li><Link href="/teams">Мои Команды</Link></li>
       <li><Link href="/users">Пользователи</Link></li>
-      <li><Link href="/tasks">Пустое окно</Link></li>
+      <li><Link href="/tasks">API TEST!!!</Link></li>
       <li><Link href="/login">Логин</Link></li>
     </ul>
   </div>

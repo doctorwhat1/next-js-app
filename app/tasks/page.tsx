@@ -8,7 +8,7 @@ interface Team {
   description: string;
 }
 
-const tasks = () => {
+const Tasks = () => {
   const [teams, setTeams] = useState<Team[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -65,4 +65,4 @@ const tasks = () => {
   );
 };
 
-export default tasks;
+export default Tasks;

@@ -1,38 +1,40 @@
-'use client'; // This ensures it's a client component for interactivity
+'use client'
+import React, { useEffect, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
+import { fetchTeamByID } from '../../../utils/api'
 
-import { useParams } from 'next/navigation';
-import { teams } from '../../data/teams'; // Adjust path if necessary
-import { useEffect, useState } from 'react';
-
+//not used right now
 interface Team {
   id: number;
   name: string;
   description: string;
-  category: string;
-  status: string;
-  role: string;
-  image: string;
 }
 
 const TeamView: React.FC = () => {
-  const { id } = useParams(); // Get the team ID from the URL
-  const [team, setTeam] = useState<Team | undefined>(undefined);
+    const { id } = useParams(); // Get the team ID from the URL parameters
+    const [team, setTeam] = useState<any>(null); 
+    const [error, setError] = useState<string | null>(null);
 
-  // Fetch the team details based on the ID
-  useEffect(() => {
-    const selectedTeam = teams.find((t) => t.id === Number(id));
-    setTeam(selectedTeam);
-  }, [id]);
+    useEffect(() => {
+        const getTeam = async () => {
+            if (id) {
+                try {
+                    const data = await fetchTeamByID(Number(id));
+                    setTeam(data);
+                } catch (err) {
+                  setError(err instanceof Error ? err.message : 'An error occurred');
+                }
+            }
+        };
 
-  if (!team) {
+        getTeam();
+    }, [id]);
+
+    if (error) return <div>Error: {error}</div>;
+    if (!team) return <div>Loading...</div>; // Loading state while fetching
+
     return (
-      <div className="flex h-screen items-center justify-center">
-        <h2 className="text-2xl font-bold">Team not found</h2>
-      </div>
-    );
-  }
-
-  return (
     <div className="container mx-auto p-6">
       <div className="flex flex-col items-center gap-6 md:flex-row md:items-start md:gap-12">
         {/* Avatar Section */}
@@ -73,7 +75,7 @@ const TeamView: React.FC = () => {
         </div>
       </div>
     </div>
-  );
+    );
 };
 
 export default TeamView;

@@ -81,16 +81,6 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
             </select>
           </div>
           <div>
-            <label className="label">Role</label>
-            <input
-              type="text"
-              name="role"
-              value={newTeam.role}
-              onChange={handleChange}
-              className="input input-bordered w-full"
-            />
-          </div>
-          <div>
             <label className="label">Image URL</label>
             <input
               type="text"

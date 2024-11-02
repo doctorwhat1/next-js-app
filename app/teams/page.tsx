@@ -9,10 +9,10 @@ import {
   CardTitle
 } from '@/components/card';
 
-import TeamsTable from "@/components/TeamsTable";
+import TeamsTable2 from "@/components/TeamsTable2";
 
 import { teams } from "../data/teams";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Team } from "@/models/Team";
 import CreateTeamModal from "@/components/CreateTeamModal";
 
@@ -38,9 +38,7 @@ function useTeamsManager(initialData: Team[]) {
 }
 
 
-
 const Page: React.FC = () => {
-
     const {
       teams2,
       isModalOpen,
@@ -48,6 +46,7 @@ const Page: React.FC = () => {
       handleCloseModal,
       handleSaveTeam,
     } = useTeamsManager(teams);
+
 
 
 
@@ -86,7 +85,7 @@ const Page: React.FC = () => {
 
     
   <div className="overflow-x-auto">
-    <TeamsTable data={teams2} />
+    <TeamsTable2 />
   </div>
 
   </CardContent>

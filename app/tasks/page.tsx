@@ -1,4 +1,5 @@
 'use client'
+import TeamsTable2 from '@/components/TeamsTable2';
 import React from 'react'
 import { useEffect, useState } from 'react';
 
@@ -9,6 +10,7 @@ interface Team {
 }
 
 const Tasks = () => {
+  
   const [teams, setTeams] = useState<Team[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -43,24 +45,8 @@ const Tasks = () => {
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Teams</h1>
-      <table className="min-w-full bg-white border border-gray-300">
-        <thead>
-          <tr className="bg-gray-200">
-            <th className="py-2 px-4 border-b">ID</th>
-            <th className="py-2 px-4 border-b">Name</th>
-            <th className="py-2 px-4 border-b">Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {teams.map((team) => (
-            <tr key={team.id} className="hover:bg-gray-100">
-              <td className="py-2 px-4 border-b">{team.id}</td>
-              <td className="py-2 px-4 border-b">{team.name}</td>
-              <td className="py-2 px-4 border-b">{team.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+
+      <TeamsTable2/>
     </div>
   );
 };

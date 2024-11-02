@@ -15,7 +15,7 @@ const Profile = () => {
     <div>
       
     <Topbar></Topbar>
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center pt-32">
       <div className="bg-white shadow-md rounded-lg p-6 w-96">
         <img
           src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"

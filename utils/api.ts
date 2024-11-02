@@ -1,5 +1,5 @@
 export const fetchTeams = async () => {
-    const response = await fetch('http://45.144.235.93:5000/teams');
+    const response = await fetch('http://localhost:8000/team-service/teams');
     if (!response.ok) {
         throw new Error('Failed to fetch teams');
     }
@@ -7,7 +7,7 @@ export const fetchTeams = async () => {
 };
 
 export async function fetchTeamByID(id: number) {
-    const response = await fetch(`http://45.144.235.93:5000/teams/${id}`);
+    const response = await fetch(`http://localhost:8000/team-service/teams/${id}`);
     if (!response.ok) {
         throw new Error('Failed to fetch team');
     }

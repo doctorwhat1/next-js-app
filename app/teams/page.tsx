@@ -15,6 +15,7 @@ import { teams } from "../data/teams";
 import { useState, useEffect } from "react";
 import { Team } from "@/models/Team";
 import CreateTeamModal from "@/components/CreateTeamModal";
+import router from "next/router";
 
 
 function useTeamsManager(initialData: Team[]) {
@@ -24,8 +25,11 @@ function useTeamsManager(initialData: Team[]) {
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
-  const handleSaveTeam = (newTeam: Team) => {
-    setTeams((prevTeams) => [...prevTeams, newTeam]);
+  const handleSaveTeam = () => {
+    //const handleSaveTeam = (newTeam: Team) => {
+    //setTeams((prevTeams) => [...prevTeams, newTeam]);
+
+    
   };
 
   return {
@@ -51,7 +55,7 @@ const Page: React.FC = () => {
 
 
   return (
-<div>
+<>
 
 <div className="relative z-50">
     <Topbar />
@@ -100,7 +104,7 @@ const Page: React.FC = () => {
 
 
 
-</div>
+</>
   )
 }
 

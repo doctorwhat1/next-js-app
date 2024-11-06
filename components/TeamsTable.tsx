@@ -48,11 +48,11 @@ const TeamsTable: React.FC<TeamsTableProps> = ({ data }) => {
                 </div>
               </td>
               <td>
-                {team.category}
+                {team.type}
                 <br />
                 <span className="badge badge-ghost badge-sm">{team.status}</span>
               </td>
-              <td>{team.role}</td>
+              <td>Role</td>
               <th>
                 <button
                   className="btn btn-ghost btn-xs"

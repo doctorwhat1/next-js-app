@@ -1,6 +1,7 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Team } from '@/models/Team';
+import { createTeam } from '@/utils/api';
 
 interface CreateTeamModalProps {
   isOpen: boolean;
@@ -8,14 +9,15 @@ interface CreateTeamModalProps {
   onSave: (team: Team) => void;
 }
 
+
+
 const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSave }) => {
   const [newTeam, setNewTeam] = useState<Team>({
     id: Date.now(),
     name: '',
     description: '',
-    category: '',
-    status: '',
-    role: '',
+    status: 'ACTIVE',
+    type: 'SHORT_TERM',
     image: '',
   });
 
@@ -24,13 +26,30 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
     setNewTeam({ ...newTeam, [name]: value });
   };
 
+  useEffect(() => {
+    const postTeam = async () => {
+      try {
+        const data = await createTeam(newTeam);
+      } catch (err) {
+       // setError(err instanceof Error ? err.message : 'An error occurred');
+      }
+    };
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSave(newTeam);
+    console.log(newTeam);
+    createTeam(newTeam);
+
+
+    //if (error) return <div>Error: {error}</div>;
+
+
     onClose();
   };
 
-  if (!isOpen) return null; // Don't render anything if the modal is closed
+  if (!isOpen) return null;
 
   return (
     <div className="modal modal-open">
@@ -59,14 +78,18 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
             />
           </div>
           <div>
-            <label className="label">Category</label>
-            <input
-              type="text"
-              name="category"
-              value={newTeam.category}
+          <label className="label">Type</label>
+            <select
+              name="type"
+              value={newTeam.type}
               onChange={handleChange}
-              className="input input-bordered w-full"
-            />
+              className="select select-bordered w-full"
+            >
+              <option value="SHORT_TERM">Кратковременная</option>
+              <option value="LONG_TERM">Долговременная</option>
+              <option value="DEPARTMENT">Департамент</option>
+              <option value="TRAINING">Учебная</option>
+            </select>
           </div>
           <div>
             <label className="label">Status</label>
@@ -76,8 +99,8 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
               onChange={handleChange}
               className="select select-bordered w-full"
             >
-              <option value="Активная">Активная</option>
-              <option value="В архиве">В архиве</option>
+              <option value="ACTIVE">Активная</option>
+              <option value="INACTIVE">В архиве</option>
             </select>
           </div>
           <div>

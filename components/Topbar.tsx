@@ -1,10 +1,11 @@
+'use client'
 import React from 'react'
 import Link from 'next/link'
 import Sidebar from './Sidebar'
 
 const Topbar = () => {
   return (
-<div className="navbar bg-base-100">
+<div className="navbar bg-base-100 sticky">
   <div className="flex-1">
   <Sidebar />
   </div>

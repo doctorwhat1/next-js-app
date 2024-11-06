@@ -8,6 +8,9 @@ interface Team {
     id: number;
     name: string;
     description: string;
+    type: string;
+    status: string;
+    image: string;
 }
 
 const TeamsTable2: React.FC = () => {
@@ -57,7 +60,7 @@ const TeamsTable2: React.FC = () => {
                 <div className="flex items-center gap-3">
                   <div className="avatar">
                     <div className="mask mask-squircle h-12 w-12">
-                      <img src='https://cdn.worldvectorlogo.com/logos/it-2.svg' alt={`Avatar of ${team.name}`} />
+                      <img src={team.image} alt={`Avatar of ${team.name}`} />
                     </div>
                   </div>
                   <div>
@@ -67,11 +70,11 @@ const TeamsTable2: React.FC = () => {
                 </div>
               </td>
               <td>
-                Category
+                {team.type}
                 <br />
-                <span className="badge badge-ghost badge-sm">Status</span>
+                <span className="badge badge-ghost badge-sm">{team.status}</span>
               </td>
-              <td>Role</td>
+              <td>User</td>
               <th>
                 <button
                   className="btn btn-ghost btn-xs"

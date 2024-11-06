@@ -2,8 +2,7 @@ export interface Team {
     id: number;
     name: string;
     description: string;
-    category: string;
     status: string;
-    role: string;
+    type: string;
     image: string;
   }

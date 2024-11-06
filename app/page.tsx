@@ -12,6 +12,8 @@ import {
 } from '@/components/card';
 import { DarkThemeToggle } from "flowbite-react";
 import DarkModeButton from "@/components/DarkModeButton";
+import ThemeToggle from "@/components/ThemeToggle";
+import { ThemeProvider } from "next-themes";
 
 
 export default function Home() {
@@ -42,7 +44,6 @@ export default function Home() {
       
     </div>
 
-    
 
       </CardContent>
     </Card>

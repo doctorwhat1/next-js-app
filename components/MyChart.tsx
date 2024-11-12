@@ -1,8 +1,10 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
+
 
 const MyChart: React.FC = () => {
-  const chartOptions = {
+  const chartOptions: ApexOptions = {
     chart: {
       type: 'line',
       height: 350,

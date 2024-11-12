@@ -14,8 +14,9 @@ import { DarkThemeToggle } from "flowbite-react";
 import DarkModeButton from "@/components/DarkModeButton";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "next-themes";
-import MyChart from "@/components/MyChart";
 
+import dynamic from 'next/dynamic';
+const MyChart = dynamic(() => import('../components/MyChart'), { ssr: false });
 
 export default function Home() {
   return (

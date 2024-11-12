@@ -14,6 +14,8 @@ import {
 import Topbar from '@/components/Topbar';
 import PeopleTable from '@/components/PeopleTable';
 import { people } from '@/app/data/people';
+import TasksTable from '@/components/TasksTable';
+import { tasks } from '@/app/data/tasks';
 
 //not used right now
 // interface Team {
@@ -136,7 +138,7 @@ const TeamView: React.FC = () => {
     </CardDescription>
   </CardHeader>
   <CardContent>
-  <PeopleTable data={people}/>
+  <TasksTable data={tasks}/>
 
 
   </CardContent>

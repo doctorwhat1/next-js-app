@@ -14,6 +14,7 @@ import { DarkThemeToggle } from "flowbite-react";
 import DarkModeButton from "@/components/DarkModeButton";
 import ThemeToggle from "@/components/ThemeToggle";
 import { ThemeProvider } from "next-themes";
+import MyChart from "@/components/MyChart";
 
 
 export default function Home() {
@@ -43,7 +44,9 @@ export default function Home() {
       </div>
       
     </div>
-
+    <div className="w-[40%]">
+      <MyChart />
+    </div>
 
       </CardContent>
     </Card>

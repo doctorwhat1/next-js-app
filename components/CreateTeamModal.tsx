@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Team } from '@/models/Team';
 import { createTeam } from '@/utils/api';
 
+
 interface CreateTeamModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -26,6 +27,8 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
     setNewTeam({ ...newTeam, [name]: value });
   };
 
+  
+
   useEffect(() => {
     const postTeam = async () => {
       try {
@@ -41,11 +44,7 @@ const CreateTeamModal: React.FC<CreateTeamModalProps> = ({ isOpen, onClose, onSa
     onSave(newTeam);
     console.log(newTeam);
     createTeam(newTeam);
-
-
     //if (error) return <div>Error: {error}</div>;
-
-
     onClose();
   };
 

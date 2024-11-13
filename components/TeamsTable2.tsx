@@ -13,6 +13,19 @@ interface Team {
     image: string;
 }
 
+function formatTeamType(termType: string): string {
+  switch (termType) {
+      case "SHORT_TERM":
+          return "Кратковременная";
+      case "DEPARTMENT":
+          return "Департамент";
+      case "LONG_TERM":
+          return "Долговременная";
+      default:
+          return termType;
+  }
+}
+
 const TeamsTable2: React.FC = () => {
     const [teams, setTeams] = useState<Team[]>([]);
     const [error, setError] = useState<string | null>(null);
@@ -70,7 +83,7 @@ const TeamsTable2: React.FC = () => {
                 </div>
               </td>
               <td>
-                {team.type}
+                {formatTeamType(team.type)}
                 <br />
                 <span className="badge badge-ghost badge-sm">{team.status}</span>
               </td>

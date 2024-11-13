@@ -22,9 +22,9 @@ const TasksTable: React.FC<TasksTableProps> = ({ data }) => {
       <thead>
         <tr>
           <th></th>
-          <th>Name</th>
-          <th>Job</th>
-          <th>Favorite Color</th>
+          <th>Название</th>
+          <th>Дата</th>
+          <th>Приоритет</th>
           <th></th>
         </tr>
       </thead>
@@ -40,23 +40,24 @@ const TasksTable: React.FC<TasksTableProps> = ({ data }) => {
               <div className="flex items-center gap-3">
                 <div className="avatar">
                   <div className="mask mask-squircle h-12 w-12">
-                  <div className="font-bold">{task.title}</div>
+                    <img src={'https://cdn-icons-png.flaticon.com/512/4345/4345800.png'} alt={`${task.title} Image`} />
+                  
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">{task.description}</div>
-                  <div className="text-sm opacity-50">{task.dueDate}</div>
+                  <div className="font-bold">{task.title}</div>
+                  <div className="text-sm opacity-50">{task.description}</div>
                 </div>
               </div>
             </td>
             <td>
-              {task.status}
+              {task.dueDate}
               <br />
               <span className="badge badge-ghost badge-sm">
-                {task.priority}
+                {task.status}
               </span>
             </td>
-            <td>{task.createdAt}</td>
+            <td>{task.priority}</td>
             <th>
               <button
                 className="btn btn-ghost btn-xs"

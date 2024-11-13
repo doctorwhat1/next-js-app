@@ -86,7 +86,7 @@ const TeamView: React.FC = () => {
                       </div>
                       <div>
                         <h2 className="text-xl font-semibold">Status</h2>
-                        <p className={`badge ${team.status === 'Активная' ? 'badge-success' : 'badge-warning'}`}>
+                        <p className={`badge ${team.status === 'ACTIVE' ? 'badge-success' : 'badge-warning'}`}>
                           {team.status}
                         </p>
                       </div>
@@ -114,6 +114,23 @@ const TeamView: React.FC = () => {
 
 <Card>
   <CardHeader>
+    <CardTitle>Таски</CardTitle>
+    <CardDescription>
+      Рабочие задачи, поставленные Вам в команде
+    </CardDescription>
+  </CardHeader>
+  <CardContent>
+  <TasksTable data={tasks}/>
+
+
+  </CardContent>
+</Card>
+</div>
+
+<div className="pl-20 pr-20 m-2">
+
+<Card>
+  <CardHeader>
     <CardTitle>Участники</CardTitle>
     <CardDescription>
       Пользователи, состоящие в команде.
@@ -121,24 +138,6 @@ const TeamView: React.FC = () => {
   </CardHeader>
   <CardContent>
   <PeopleTable data={people}/>
-
-
-  </CardContent>
-</Card>
-</div>
-
-
-<div className="pl-20 pr-20 m-2">
-
-<Card>
-  <CardHeader>
-    <CardTitle>Таски</CardTitle>
-    <CardDescription>
-      Рабочие задачи, поставленные в команде
-    </CardDescription>
-  </CardHeader>
-  <CardContent>
-  <TasksTable data={tasks}/>
 
 
   </CardContent>

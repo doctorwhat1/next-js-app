@@ -1,4 +1,4 @@
-"use client"; // Ensure this component runs on the client side
+"use client";
 
 import { Person } from "@/models/Person";
 import { useRouter } from "next/navigation";
@@ -12,7 +12,7 @@ const PeopleTable: React.FC<PeopleTableProps> = ({ data }) => {
   const router = useRouter();
 
   const handleEditClick = (id: number) => {
-    router.push(`/userview/${id}`); // Redirect to the userview page with the user's ID
+    router.push(`/userview/${id}`); // redirect to the userview page with the user's ID
   };
 
   return (

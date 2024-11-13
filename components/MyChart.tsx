@@ -20,7 +20,7 @@ const MyChart: React.FC = () => {
       curve: 'smooth',
     },
     title: {
-      text: 'Количество Тасков',
+      text: 'Количество Задач',
       align: 'left',
       style: {
         fontSize: '24px',

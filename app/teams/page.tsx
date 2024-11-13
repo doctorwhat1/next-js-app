@@ -16,6 +16,7 @@ import { useState, useEffect } from "react";
 import { Team } from "@/models/Team";
 import CreateTeamModal from "@/components/CreateTeamModal";
 import router from "next/router";
+import CreateTeamModal2 from "@/components/CreateTeamModal2";
 
 
 function useTeamsManager(initialData: Team[]) {
@@ -78,7 +79,7 @@ const Page: React.FC = () => {
   <button className="btn btn-primary mb-4" onClick={handleOpenModal}>
         Create Team
       </button>
-      <CreateTeamModal
+      <CreateTeamModal2
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         onSave={handleSaveTeam}

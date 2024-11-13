@@ -20,6 +20,7 @@ const MyChart = dynamic(() => import('../components/MyChart'), { ssr: false });
 
 export default function Home() {
   return (
+    <ThemeProvider>
     <div>
     
     <div className="relative z-50">
@@ -56,7 +57,7 @@ export default function Home() {
 
     {/* <h1><br></br>Text!</h1>
     <h3>Moooore text!!!</h3> */}
-
+    
   
     </div>
 
@@ -65,5 +66,6 @@ export default function Home() {
 
 
 </div>
+</ThemeProvider>
   );
 }

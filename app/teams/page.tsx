@@ -79,7 +79,7 @@ const Page: React.FC = () => {
   <button className="btn btn-primary mb-4" onClick={handleOpenModal}>
         Create Team
       </button>
-      <CreateTeamModal2
+      <CreateTeamModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         onSave={handleSaveTeam}

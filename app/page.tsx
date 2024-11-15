@@ -46,7 +46,7 @@ export default function Home() {
       </div>
       
     </div>
-    <div className="w-[40%]">
+    <div className="w-full sm:w-[40%]">
       <MyChart />
     </div>
 
